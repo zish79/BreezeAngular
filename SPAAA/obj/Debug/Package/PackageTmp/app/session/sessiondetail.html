@@ -1,0 +1,104 @@
+﻿<section class="mainbar" data-ng-controller="sessiondetail as vm">
+    <section class="matter">
+        <div class="container-fluid">
+            <div>
+                <button class="btn btn-info" data-ng-click="vm.goBack()">
+                    <i class="glyphicon glyphicon-hand-left"></i>Back
+                </button>
+                <button class="btn btn-info" data-ng-click="vm.Cancel()" data-ng-disabled="!vm.canSave">
+                    <i class="glyphicon glyphicon-remove"></i>Cancel
+                </button>
+                <button class="btn btn-info" data-ng-click="vm.Save()" data-ng-disabled="!vm.canSave">
+                    <i class="glyphicon glyphicon-save"></i>Save
+                </button>
+                <button class="btn btn-danger" data-ng-click="vm.deleteSession()">
+                    <i class="glyphicon glyphicon-trash"></i>Delete
+                </button>
+                <span data-ng-show="vm.hasChanges" class="icon-asterisk ng-hide">
+                    <i class="glyphicon glyphicon-asterisk"></i>
+                </span>
+            </div>
+            <div class="widget wgreen">
+                <div data-cc-widget-header title="Edit {{vm.session.title || 'New Session'}}"></div>
+                <div class="widget-content user">
+                    <div style="margin-left: 5%">
+                        <div>
+                            <div class="row">
+                                <label>Title</label>
+                            </div>
+                            <div class="row">
+                                <input data-ng-model="vm.session.title"
+                                    placeholder="Session Title" data-z-validate/>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="row">
+                                <label>Track</label>
+                            </div>
+                            <div class="row">
+                                <select data-ng-options="t.name for t in vm.tracks" data-ng-model="vm.session.track"
+                                    placeholder="Track">
+                                </select>
+                            </div>
+                            <div class="row">
+                                <label>Time Slot</label>
+                            </div>
+                            <div class="row">
+                                <select data-ng-options="t.name for t in vm.timeslots" data-ng-model="vm.session.timeSlot"
+                                    placeholder="Time Slot">
+                                </select>
+                            </div>
+                            <div class="row">
+                                <label>Room</label>
+                            </div>
+                            <div class="row">
+                                <select data-ng-options="t.name for t in vm.rooms" data-ng-model="vm.session.room"
+                                    placeholder="Room">
+                                </select>
+                            </div>
+                            <div class="row">
+                                <label>Code</label>
+                            </div>
+                            <div class="row">
+                                <input data-ng-model="vm.session.code"
+                                    placeholder="Code" />
+                            </div>
+                            <div class="row">
+                                <label>Level</label>
+                            </div>
+                            <div class="row">
+                                <input data-ng-model="vm.session.level"
+                                    placeholder="Level" />
+                            </div>
+                            <div class="row">
+                                <label>Tags</label>
+                            </div>
+                            <div class="row">
+                                <input data-ng-model="vm.session.tags"
+                                    placeholder="Tags" />
+                            </div>
+                            <div class="row">
+                                <div>
+                                    <img data-cc-img-person="{{vm.session.speaker.imageSource}}" class="img-polaroid" />
+                                    <address>{{vm.session.speaker.fullName}}</address>
+                                    <select data-ng-options="speaker.firstName for speaker in vm.speakers" data-ng-model="vm.session.speaker"
+                                        placeholder="Speaker">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="row">
+                                <label>Description</label>
+                            </div>
+                            <div class="row">
+                                <input data-ng-model="vm.session.description"
+                                    placeholder="Description" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

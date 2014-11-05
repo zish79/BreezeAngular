@@ -1,0 +1,76 @@
+﻿<section class="mainbar" data-ng-controller="speakerdetail as vm">
+    <section class="matter">
+        <div class="container-fluid">
+            <div>
+                <button class="btn btn-info" data-ng-click="vm.goBack()">
+                    <i class="glyphicon glyphicon-hand-left"></i>Back
+                </button>
+                <button class="btn btn-info" data-ng-click="vm.Cancel()" data-ng-disabled="!vm.canSave">
+                    <i class="glyphicon glyphicon-remove"></i>Cancel
+                </button>
+                <button class="btn btn-info" data-ng-click="vm.Save()" data-ng-disabled="!vm.canSave">
+                    <i class="glyphicon glyphicon-save"></i>Save
+                </button>
+                <span data-ng-show="vm.hasChanges" class="icon-asterisk ng-hide">
+                    <i class="glyphicon glyphicon-asterisk"></i>
+                </span>
+            </div>
+            <div class="widget wgreen">
+                <div data-cc-widget-header title="Edit {{vm.speaker.firstName || 'New Speaker'}}"></div>
+                <div class="widget-content user">
+                    <div style="margin-left: 5%">
+                        <div class="row">
+                            <label>First Name</label>
+                        </div>
+                        <div class="row">
+                            <input data-ng-model="vm.speaker.firstName"
+                                placeholder="First Name" 
+                                data-z-validate/>
+                        </div>
+                        <div class="row">
+                            <label>Last Name</label>
+                        </div>
+                        <div class="row">
+                            <input data-ng-model="vm.speaker.lastName"
+                                placeholder="Last Name" 
+                                data-z-validate/>
+                        </div>
+                        <div class="row">
+                            <label>Email</label>
+                        </div>
+                        <div class="row">
+                            <input data-ng-model="vm.speaker.email"
+                                placeholder="Email" />
+                        </div>
+                        <div class="row">
+                            <label>Blog</label>
+                        </div>
+                        <div class="row">
+                            <input data-ng-model="vm.speaker.blog"
+                                placeholder="Blog" />
+                        </div>
+                        <div class="row">
+                            <label>Twitter</label>
+                        </div>
+                        <div class="row">
+                            <input data-ng-model="vm.speaker.twitter"
+                                placeholder="Twitter" />
+                        </div>
+                        <div class="row">
+                            <div>
+                                <img data-cc-img-person="{{vm.speaker.imageSource}}" class="img-polaroid" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label>Bio</label>
+                        </div>
+                        <div class="row">
+                            <textarea data-ng-model="vm.speaker.bio"
+                                placeholder="Speaker Bio"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

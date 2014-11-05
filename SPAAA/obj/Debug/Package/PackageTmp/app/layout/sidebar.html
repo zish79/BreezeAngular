@@ -1,0 +1,36 @@
+﻿<div data-cc-sidebar data-ng-controller="sidebar as vm">
+    <div class="sidebar-filler"></div>
+    <div class="sidebar-dropdown"><a href="#">Menu</a></div>
+    <div class="sidebar-inner">
+        <div class="row">
+            <div class="sidebar-widget">
+                <!--<form class="input-append row-fluid">
+                    <input type="text" class="span8"
+                        data-ng-model="vm.searchText"
+                        data-ng-keyup="vm.search($event)"
+                        placeholder="Find sessions" />
+                    <a class="btn btn-info btn-notext" data-ng-click="vm.search($event)" />
+                </form>-->
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control"
+                            data-ng-model="vm.searchText"
+                            data-ng-keyup="vm.search($event)"
+                            placeholder="Find sessions" />
+                    </div>
+                    <button class="btn btn-default" data-ng-click="vm.search($event)"><span class="glyphicon glyphicon-search"></span></button>
+                </form>
+            </div>
+        </div>
+        <ul class="navi">
+            <li class="nlightblue fade-selection-animation" data-ng-class="vm.isCurrent(r)"
+                data-ng-repeat="r in vm.navRoutes">
+                <a href="#{{r.url}}" data-ng-bind-html="r.config.settings.content"></a>
+            </li>
+            <li class="nlightblue">
+                <a href="" data-ng-click="vm.clearStorage()"><i class="glyphicon glyphicon-cloud"></i>Clear Storage
+                <span class="pull-right"></span></a>
+            </li>
+        </ul>
+    </div>
+</div>
